@@ -5,7 +5,7 @@ wp.blocks.registerBlockType('spreadsheet-paste/paste-block', {
 	icon: 'media-spreadsheet',
 	category: 'common',
 	attributes: {
-		headers: { type: 'string', default: 'default' },
+		headers: { type: 'string', default: 'headers-first-row' },
 		data: { type: 'string' },
 	},
 

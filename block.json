@@ -1,0 +1,18 @@
+{
+  "name": "spreadsheet-paste/paste-block",
+  "title": "Spreadsheet Paste",
+  "category": "common",
+  "description": "A simple block to display data pasted from a spreadsheet",
+  "keywords": [ "block", "blocks", "spreadsheet", "excel", "sheets", "paste" ],
+
+  "attributes": {
+    "headers":  {
+      "type": "string"
+    },
+    "data":  {
+      "type": "string"
+    }
+  },
+  "script": "spreadsheet-paste.js",
+  "editorStyle": "spreadsheet-paste.css"
+}
