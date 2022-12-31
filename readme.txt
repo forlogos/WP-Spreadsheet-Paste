@@ -1,4 +1,4 @@
-=== Spreadsheet Paste ===
+===Spreadsheet Paste Block===
 Contributors: forlogos
 Donate link: http://jasonjalbuena.com/donate/
 Tags: block, blocks, spreadsheet, excel, sheets, paste
@@ -9,15 +9,13 @@ Stable tag: 1.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-A simple block to display data pasted from a spreadsheet
+A simple block to display data pasted from a spreadsheet.
 
 == Description ==
 
-Copy cells directly from a spreadsheet (such as Google Sheets or Libreoffice Calc) and paste into this block. Spreadsheet cells will be display and formatted properly.
+Copy cells directly from a spreadsheet (such as Google Sheets or Libreoffice Calc) and paste into this block. Spreadsheet cells will be displayed and formatted properly.
 
 == Installation ==
-
-= Installation =
 
 Install and activate using the built-in WordPress plugin installer.
 
