@@ -2,7 +2,7 @@
 Contributors: forlogos
 Donate link: http://jasonjalbuena.com/donate/
 Tags: block, blocks, spreadsheet, excel, sheets, paste
-Requires at least: 6.1.1
+Requires at least: 5.3.14
 Tested up to: 6.1.1
 Requires PHP: 7.3.5
 Stable tag: 1.0
@@ -17,7 +17,7 @@ Copy cells directly from a spreadsheet (such as Google Sheets or Libreoffice Cal
 
 == Installation ==
 
-Install and activate using the built-in WordPress plugin installer.
+Install and activate using either the built-in WordPress plugin installer or the Block Directory.
 
 Or manually by:
 
@@ -31,7 +31,7 @@ Or manually by:
 
 No, just paste in cells from your spreadsheet and it's ready to go
 
-= Will cell formatting (font & cell colors, font styles ) copy over to the block =
+= Will cell formatting (font & cell colors, font styles ) copy over to the block? =
 
 No they will not. Only content / data is kept in the copy/paste process for this block. The block will be formatted using WordPress / your theme's styles.
 
