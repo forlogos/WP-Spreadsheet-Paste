@@ -20,7 +20,7 @@ function spreadsheet_paste_block() {
 add_action( 'enqueue_block_editor_assets', 'spreadsheet_paste_block' );
 
 //filter and format output for frontend
-function filter_spreadsheet_paste_frontend( $block_content, $block ) {
+function flgs_filter_spreadsheet_paste_frontend( $block_content, $block ) {
    if ( $block['blockName'] === 'spreadsheet-paste/paste-block' ) {
 
       //make vars
@@ -80,4 +80,4 @@ function filter_spreadsheet_paste_frontend( $block_content, $block ) {
 
    return $block_content;
 }
-add_filter( 'render_block', 'filter_spreadsheet_paste_frontend', 10, 2 );
+add_filter( 'render_block', 'flgs_filter_spreadsheet_paste_frontend', 10, 2 );
