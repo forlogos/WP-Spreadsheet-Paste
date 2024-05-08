@@ -3,9 +3,9 @@ Contributors: forlogos
 Donate link: http://jasonjalbuena.com/donate/
 Tags: block, blocks, spreadsheet, excel, sheets, paste
 Requires at least: 5.3.14
-Tested up to: 6.5.2
+Tested up to: 6.5.3
 Requires PHP: 7.3.5
-Stable tag: 1.0
+Stable tag: 1.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -44,5 +44,5 @@ No they will not. Only content / data is kept in the copy/paste process for this
 
 == Upgrade Notice ==
 
-= 1.0 =
-Version 1. No upgrades yet.
+= 1.1 =
+* Integrate Freemius for analytics, debugging, and support

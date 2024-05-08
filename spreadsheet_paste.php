@@ -1,13 +1,90 @@
 <?php
 /*
   Plugin Name: Spreadsheet Paste Block
-  Plugin URI:
+  Plugin URI: https://spreadsheet-paste-block.jasonjalbuena.com
   Description: A simple block to display data pasted from a spreadsheet
-  Version: 1.0
+  Version: 1.1
   Author: forlogos
   Author URI: https://jasonjalbuena.com
   License: GPL V3
 */
+
+//freemius stuff
+if ( ! function_exists( 'spb_fs' ) ) {
+    // Create a helper function for easy SDK access.
+    function spb_fs() {
+        global $spb_fs;
+
+        if ( ! isset( $spb_fs ) ) {
+            // Include Freemius SDK.
+            require_once dirname(__FILE__) . '/freemius/start.php';
+
+            $spb_fs = fs_dynamic_init( array(
+                'id'                  => '15553',
+                'slug'                => 'spreadsheet-paste-block',
+                'type'                => 'plugin',
+                'public_key'          => 'pk_811aef7e7148e68e970db5e1f82dd',
+                'is_premium'          => false,
+                'has_addons'          => false,
+                'has_paid_plans'      => false,
+                'menu'                => array(
+                    'first-path'     => 'plugins.php',
+                    'account'        => false,
+                    'support'        => false,
+                ),
+            ) );
+        }
+
+        return $spb_fs;
+    }
+
+    // Init Freemius.
+    spb_fs();
+    // Signal that SDK was initiated.
+    do_action( 'spb_fs_loaded' );
+}
+
+//freemius optin for new users
+function spb_fs_custom_connect_message(
+  $message,
+  $user_first_name,
+  $plugin_title,
+  $user_login,
+  $site_link,
+  $freemius_link
+) {
+  return sprintf(
+    __( 'Hi %1$s' ) . ',<br>' .
+    __( 'Please help us improve %2$s! If you opt-in, some data about your usage of %2$s will be sent to %5$s. If you skip this, that\'s okay! %2$s will still work just fine.', 'spreadsheet-paste-block' ),
+    $user_first_name,
+    '<b>' . $plugin_title . '</b>',
+    '<b>' . $user_login . '</b>',
+    $site_link,
+    $freemius_link
+  );
+}
+spb_fs()->add_filter('connect_message', 'spb_fs_custom_connect_message', 10, 6);
+
+//freemius optin for existing users
+function spb_fs_custom_connect_message_on_update(
+  $message,
+  $user_first_name,
+  $plugin_title,
+  $user_login,
+  $site_link,
+  $freemius_link
+) {
+  return sprintf(
+    __( 'Hi %1$s' ) . ',<br>' .
+    __( 'Never miss an important update -- opt-in to our security and feature updates notifications, and non-sensitive diagnostic tracking with freemius.com.', 'spreadsheet-paste-block' ),
+    $user_first_name,
+    '<b>' . $plugin_title . '</b>',
+    '<b>' . $user_login . '</b>',
+    $site_link,
+    $freemius_link
+  );
+}
+spb_fs()->add_filter('connect_message_on_update', 'spb_fs_custom_connect_message_on_update', 10, 6);
 
 // wp-admin assets
 function spreadsheet_paste_block() {
